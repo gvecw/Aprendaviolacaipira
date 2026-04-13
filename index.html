@@ -2571,83 +2571,162 @@
 
 			<div class="max-w-xl mx-auto py-12">
 
-				<!-- CARD DE BÔNUS PREMIUM -->
-				<div style="max-width:700px; margin:0 auto 48px; background:linear-gradient(145deg, #160d08 0%, #0d0705 100%); border:1px solid rgba(245,158,11,0.35); border-radius:24px; padding:40px 24px; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 15px rgba(245,158,11,0.08); position:relative; overflow:hidden;">
+
+
+			<style>
+				@media (max-width: 768px) {
+					.bonus-card-premium {
+						padding: 30px 16px !important;
+						margin-left: 10px !important;
+						margin-right: 10px !important;
+					}
+					.bonus-badge-top {
+						font-size: 10px !important;
+						padding: 5px 14px !important;
+						margin-bottom: 20px !important;
+					}
+					.bonus-title {
+						font-size: 24px !important;
+						line-height: 1.3 !important;
+						margin-bottom: 16px !important;
+					}
+					.bonus-desc {
+						font-size: 14px !important;
+						line-height: 1.6 !important;
+						max-width: 280px !important;
+						margin-bottom: 24px !important;
+					}
+					.bonus-value-box {
+						max-width: 260px !important;
+						padding: 16px !important;
+						margin: 0 auto 32px !important;
+					}
+					.bonus-free-label {
+						font-size: 9px !important;
+						padding: 5px 12px !important;
+						top: -15px !important;
+						right: 50% !important;
+						transform: translateX(50%) rotate(0deg) !important;
+					}
+					.bonus-mockup-container {
+						margin-bottom: 32px !important;
+					}
+					.bonus-mockup-img {
+						max-width: 300px !important;
+					}
+					.bonus-list-container {
+						margin-bottom: 40px !important;
+					}
+					.bonus-list-item {
+						font-size: 14px !important;
+						gap: 10px !important;
+					}
+					.bonus-final-anchor {
+						padding: 16px !important;
+						min-width: 220px !important;
+						margin: 20px auto !important;
+					}
+					.bonus-final-anchor .price-today {
+						font-size: 24px !important;
+					}
+				}
+			</style>
+
+
+				<!-- CARD DE BÔNUS PREMIUM COM ANCORAGEM -->
+				<div class="bonus-card-premium" style="max-width:700px; margin:0 auto 48px; background:linear-gradient(145deg, #160d08 0%, #0d0705 100%); border:1px solid rgba(245,158,11,0.35); border-radius:32px; padding:40px 24px; box-shadow:0 25px 60px rgba(0,0,0,0.6), 0 0 20px rgba(245,158,11,0.1); position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center;">
 					
 					<!-- Glow sutil de fundo -->
 					<div style="position:absolute; top:-100px; right:-100px; width:200px; height:200px; background:radial-gradient(circle,rgba(245,158,11,0.05) 0%,transparent 70%); pointer-events:none;"></div>
 
-					<!-- HEADER DO BLOCO DE BÔNUS -->
-					<div style="text-align:center; margin-bottom:28px;">
-						<div style="display:inline-block; background:linear-gradient(90deg,rgba(180,83,9,0.25),rgba(245,158,11,0.18)); border:1px solid rgba(245,158,11,0.35); border-radius:9999px; padding:6px 18px; margin-bottom:16px;">
-							<span style="color:#f59e0b; font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;">Incluído na sua compra</span>
-						</div>
-						<h2 style="color:#ffffff; font-weight:900; font-size:clamp(22px,5.5vw,30px); margin:0 0 12px; line-height:1.2; letter-spacing:-0.5px;">
-							🎁 BÔNUS EXCLUSIVOS PRA ACELERAR<br/>SEU APRENDIZADO
-						</h2>
-						<p style="color:#9ca3af; font-size:15px; line-height:1.6; margin:0 auto; max-width:420px; opacity:0.8;">
-							Além do método completo, você recebe materiais extras que vão fazer você evoluir muito mais rápido na viola caipira
-						</p>
-					</div>
-
-					<!-- MOCKUP -->
-					<div style="text-align:center; margin:0 auto 24px; position:relative;">
-						<img src="bonuses-viola.png" alt="Materiais bônus Viola Caipira"
-							style="width:100%; max-width:420px; height:auto; display:block; margin:0 auto; border-radius:12px; filter:drop-shadow(0 25px 45px rgba(0,0,0,0.65));" />
-					</div>
-
-					<!-- BADGE PÓS-IMAGEM -->
-					<div style="text-align:center; margin-bottom:28px;">
-						<span style="display:inline-block; background:rgba(245,158,11,0.10); border:1px solid rgba(245,158,11,0.20); border-radius:8px; padding:8px 20px; color:#fbbf24; font-size:14px; font-weight:700; letter-spacing:0.5px;">
-							📚 Pacote completo de apoio para quem quer sair do zero
+					<!-- QUANTIDADE DE BÔNUS -->
+					<div class="bonus-badge-top" style="text-align:center; margin-bottom:12px; width:fit-content;">
+						<span style="color:#f59e0b; font-size:12px; font-weight:900; letter-spacing:2px; text-transform:uppercase; background:rgba(245,158,11,0.15); padding:6px 20px; border-radius:9999px; border:1px solid rgba(245,158,11,0.3); display:block;">
+							🎁 4 BÔNUS EXCLUSIVOS LIBERADOS HOJE
 						</span>
 					</div>
 
-					<!-- LISTA PERSUASIVA -->
-					<div style="max-width:440px; margin:0 auto 32px; padding:0 10px;">
+					<!-- HEADER DO BLOCO DE BÔNUS -->
+					<div style="text-align:center; margin-bottom:24px; width:100%; display:flex; flex-direction:column; align-items:center;">
+						<h2 class="bonus-title" style="color:#ffffff; font-weight:900; font-size:clamp(22px,6vw,32px); margin:0 0 12px; line-height:1.2; letter-spacing:-0.5px;">
+							🎁 4 BÔNUS EXCLUSIVOS PRA ACELERAR<br/>SEU APRENDIZADO NA VIOLA
+						</h2>
+						<p class="bonus-desc" style="color:#d1d5db; font-size:15px; line-height:1.6; margin:0 auto; max-width:440px;">
+							Além do método completo, você recebe materiais extras que vão fazer você evoluir muito mais rápido na viola caipira
+						</p>
+
+						<!-- ANCORAGEM DE VALOR -->
+						<div class="bonus-value-box" style="margin:20px 0 0; padding:12px 24px; background:rgba(255,255,255,0.03); border-radius:16px; border:1px dashed rgba(255,255,255,0.15); width:fit-content; max-width:90%;">
+							<p style="color:#9ca3af; font-size:14px; margin:0 0 4px; font-weight:500;">Esses materiais separados custariam facilmente mais de <span style="text-decoration:line-through; color:#ef4444;">R$ 157</span></p>
+							<p style="color:#fbbf24; font-size:15px; font-weight:800; margin:0;">Mas hoje você recebe TUDO INCLUSO no seu acesso</p>
+						</div>
+					</div>
+
+					<!-- MOCKUP COM SELO GRATUITO -->
+					<div class="bonus-mockup-container" style="text-align:center; margin:32px auto 28px; position:relative; width:100%;">
+						<!-- Selo Grátis -->
+						<div class="bonus-free-label" style="position:absolute; top:-10px; right:10%; background:#ef4444; color:#fff; font-size:10px; font-weight:900; padding:6px 14px; border-radius:8px; box-shadow:0 4px 12px rgba(239, 68, 68, 0.4); z-index:10; transform:rotate(5deg); letter-spacing:1px; border:1px solid rgba(255,255,255,0.2);">
+							INCLUSO GRATUITAMENTE
+						</div>
+						
+						<img src="bonuses-viola.png" alt="Materiais bônus Viola Caipira" class="bonus-mockup-img"
+							style="width:100%; max-width:440px; height:auto; display:block; margin:0 auto; border-radius:12px; filter:drop-shadow(0 25px 45px rgba(0,0,0,0.65));" />
+						
+						<!-- Bloco de Ancoragem de Valor -->
+						<div class="bonus-final-anchor" style="margin:24px auto; padding:20px 32px; background:rgba(245, 158, 11, 0.04); border:1px solid rgba(245, 158, 11, 0.15); border-radius:20px; width:fit-content; min-width:280px; box-shadow:0 0 25px rgba(245,158,11,0.03); display:flex; flex-direction:column; align-items:center;">
+							<p style="color:#9ca3af; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin:0 0 10px; opacity:0.8;">VALOR TOTAL DOS BÔNUS</p>
+							<p style="color:#ef4444; font-size:18px; font-weight:600; margin:0 0 2px; opacity:0.8;">De <span style="text-decoration:line-through; opacity:0.7;">R$ 157,00</span></p>
+							<p class="price-today" style="color:#22c55e; font-size:32px; font-weight:900; margin:0; letter-spacing:-1px;">HOJE: R$ 0,00</p>
+							<p style="color:#6b7280; font-size:13px; margin-top:10px; font-weight:600; opacity:0.9;">Incluso gratuitamente no seu acesso</p>
+						</div>
+					</div>
+
+					<!-- LISTA PERSUASIVA COM DESTAQUES -->
+					<div class="bonus-list-container" style="max-width:460px; margin:0 auto 36px; padding:0 10px; width:100%;">
 						<ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px;">
-							<li style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5;">
+							<li class="bonus-list-item" style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5; text-align:left;">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;">
 									<path d="M20 6 9 17l-5-5" />
 								</svg>
-								<span>Domine os <strong style="color:#f59e0b;">acordes essenciais</strong> da viola caipira</span>
+								<span>Domine os <strong style="color:#fbbf24;">acordes</strong> essenciais da viola caipira</span>
 							</li>
-							<li style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5;">
+							<li class="bonus-list-item" style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5; text-align:left;">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;">
 									<path d="M20 6 9 17l-5-5" />
 								</svg>
-								<span>Toque <strong style="color:#f59e0b;">modões reais</strong> com cifras e tablaturas simplificadas</span>
+								<span>Toque <strong style="color:#fbbf24;">modões</strong> reais com cifras e tablaturas simplificadas</span>
 							</li>
-							<li style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5;">
+							<li class="bonus-list-item" style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5; text-align:left;">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;">
 									<path d="M20 6 9 17l-5-5" />
 								</svg>
-								<span>Tenha um <strong style="color:#f59e0b;">repertório completo</strong> para tocar em qualquer situação</span>
+								<span>Tenha um <strong style="color:#fbbf24;">repertório</strong> completo para tocar em qualquer situação</span>
 							</li>
-							<li style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5;">
+							<li class="bonus-list-item" style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5; text-align:left;">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;">
 									<path d="M20 6 9 17l-5-5" />
 								</svg>
-								<span>Aprenda <strong style="color:#f59e0b;">músicas gospel</strong> adaptadas para viola</span>
+								<span>Aprenda músicas <strong style="color:#fbbf24;">gospel</strong> adaptadas para viola</span>
 							</li>
-							<li style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5;">
+							<li class="bonus-list-item" style="display:flex;align-items:flex-start;gap:14px;color:#e5e7eb;font-size:15px;font-weight:500;line-height:1.5; text-align:left;">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;">
 									<path d="M20 6 9 17l-5-5" />
 								</svg>
-								<span>Tudo <strong style="color:#f59e0b;">organizado passo a passo</strong> para facilitar seu aprendizado</span>
+								<span>Tudo organizado <strong style="color:#fbbf24;">passo a passo</strong> para facilitar seu aprendizado</span>
 							</li>
 						</ul>
 					</div>
 
-					<!-- FRASE DE FECHAMENTO DENTRO DO CARD -->
-					<div style="text-align:center; padding-top:24px; border-top:1px solid rgba(255,255,255,0.05);">
-						<p style="color:#ffffff; font-weight:800; font-size:16px; margin:0 0 6px; line-height:1.4;">
-							🔥 Tudo pronto pra você sair do zero hoje
+					<!-- FRASE DE FECHAMENTO AGRESSIVA -->
+					<div style="text-align:center; padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); width:100%;">
+						<p style="color:#ffffff; font-weight:800; font-size:16px; margin:0 0 8px; line-height:1.4;">
+							🚀 Você não está comprando só um método… 
 						</p>
-						<p style="color:#6b7280; font-size:13px; font-weight:500; margin:0;">
-							Acesso imediato a todos os materiais de apoio
+						<p style="color:#fbbf24; font-size:15px; font-weight:900; margin:0; text-transform:uppercase; letter-spacing:0.5px;">
+							Está levando um pacote completo pronto pra evolução
 						</p>
 					</div>
+
 				</div>
 
 				<div class="text-center mb-10">
@@ -2658,52 +2737,24 @@
 				<div class="flex flex-col gap-6">
 
 					<div class="bg-gradient-to-br from-[#1a0f0a] to-[#0d0705] rounded-2xl p-6 border border-amber-900/30">
-						<h3 class="text-2xl font-black text-white mb-1">Pacote Inicial (800 Músicas)</h3>
-						<p class="text-gray-400 text-sm mb-5 italic">Ideal para conhecer e testar</p>
+						<h3 class="text-2xl font-black text-white mb-1">Viola Caipira do Zero</h3>
+						<p class="text-gray-400 text-sm mb-5 italic">Para iniciantes</p>
 						<ul class="space-y-3 mb-6">
 							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span class="font-medium">800 modões</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+								<span class="font-medium">✔ Viola Caipira do Zero</span>
 							</li>
-							<li class="flex items-center gap-3 text-gray-300 text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>Raiz, modão, universitário e hits</span>
+							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+								<span>✔ Acesso imediato</span>
 							</li>
-							<li class="flex items-center gap-3 text-gray-300 text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>Pronto pro pendrive</span>
+							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+								<span>✔ Método simples e direto</span>
 							</li>
-							<li class="flex items-center gap-3 text-gray-300 text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>Funciona offline (sem internet)</span>
-							</li>
-							<li class="flex items-center gap-3 text-gray-300 text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>Sem propaganda</span>
-							</li>
-							<li class="flex items-center gap-3 text-gray-300 text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>Acesso imediato após compra</span>
-							</li>
-							<li class="flex items-center gap-3 text-gray-300 text-[15px] leading-relaxed">
-								<span style="flex-shrink: 0;">O</span>
-								<span style="text-decoration: line-through; text-decoration-color: #FF0000; color: #9CA3AF;">Sem Suporte VIP no WhatsApp</span>
-							</li>
-							<li class="flex items-center gap-3 text-gray-300 text-[15px] leading-relaxed">
-								<span style="flex-shrink: 0;">O</span>
-								<span style="text-decoration: line-through; text-decoration-color: #FF0000; color: #9CA3AF;">Sem Videoclipes Sertanejos em HD</span>
+							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+								<span>✔ Garantia de 7 dias</span>
 							</li>
 						</ul>
 
@@ -2720,7 +2771,7 @@
 					<!-- Indicador visual -->
 					<div class="text-center z-10 relative my-3 px-4">
 						<span class="text-amber-100 text-[15px] font-medium inline-block leading-relaxed max-w-[95%]">
-							👉 Por apenas R$ 9,00 a mais você sai do básico e leva +3.000 músicas, bônus e suporte VIP
+							👉 Por apenas R$ 9,00 a mais você leva o MÉTODO COMPLETO + suporte VIP e todos os bônus
 						</span>
 					</div>
 
@@ -2729,36 +2780,24 @@
 							<span style="background-color: #F97316; padding: 10px 28px; font-size: 15px;" class="text-white font-bold rounded-full inline-block">MAIS POPULAR</span>
 						</div>
 
-						<h3 class="text-2xl font-black text-amber-400 mb-1">Pacote Completo</h3>
-						<p class="text-gray-300 text-base mb-5">Sempre atualizado + videoclipes</p>
+						<h3 class="text-2xl font-black text-amber-400 mb-1">Método Completo</h3>
+						<p class="text-gray-300 text-base mb-5 italic">Para quem quer tudo</p>
 						<ul class="space-y-3 mb-6">
 							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>+3.000 Clássicos do Modão</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+								<span>✔ Tudo do plano iniciante</span>
 							</li>
 							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>Inclui Raiz, Universitário e Hits Atuais</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+								<span>✔ Suporte VIP no WhatsApp</span>
 							</li>
 							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>Pronto pro pendrive (Organizado por pastas)</span>
-							</li>
-							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true">
-									<path d="M20 6 9 17l-5-5"></path>
-								</svg>
-								<span>Suporte VIP no WhatsApp</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+								<span>✔ Conteúdo bônus exclusivo</span>
 							</li>
 							<li class="flex items-center gap-3 text-white text-[15px] leading-relaxed">
 								<span style="flex-shrink: 0; font-size: 16px;">🎁 </span>
-								<span>BÔNUS EXCLUSIVOS INCLUÍDOS</span>
+								<span>✔ TODOS OS BÔNUS INCLUÍDOS</span>
 							</li>
 						</ul>
 
