@@ -188,6 +188,7 @@
 
     <!-- Novo Estilo Inline pra garantir que o celular renderize perfeito ignorando Tailwind Ausente -->
     <style>
+        /* ── Hero Container ─────────────────────────── */
         .hero-container {
             position: relative;
             z-index: 10;
@@ -196,31 +197,28 @@
             align-items: center;
             text-align: center;
             width: 100%;
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
-            padding-top: 0.25rem; /* Reduced from 2rem */
+            padding: 1.5rem 1.25rem 0.5rem;   /* top / sides / bottom */
         }
-        
-        
 
+        /* ── Headline ───────────────────────────────── */
         .headline {
-            font-size: clamp(34px, 8vw, 64px); 
-            line-height: 1.05;
+            font-size: clamp(32px, 7.5vw, 64px);
+            line-height: 1.08;
             font-weight: 900;
-            margin-bottom: 2rem;
+            margin-bottom: 2rem;              /* headline → mockup */
             color: #fff;
             text-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
-        .headline-yellow {
-            color: #fbbf24;
-        }
+        .headline-yellow { color: #fbbf24; }
 
-        /* Mockup */
+        /* ── Mockup ─────────────────────────────────── */
         .mockup-wrapper {
             position: relative;
-            width: 60%; /* 50% requested, added slightly more to account for max-widths */
-            max-width: 320px;
-            margin: 0 auto 0.75rem auto;
+            width: 62%;
+            max-width: 300px;
+            margin: 0 auto 2rem auto;         /* mockup → subtítulo */
             animation: levitate 5s ease-in-out infinite;
         }
         .mockup-img {
@@ -243,26 +241,28 @@
             border-radius: 50%;
             z-index: -1;
         }
-
         @keyframes levitate {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+            50%       { transform: translateY(-10px); }
         }
 
+        /* ── Sub-headline ───────────────────────────── */
         .sub-headline {
-            font-size: clamp(17px, 4.5vw, 22px);
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.5;
-            margin-bottom: 0.75rem;
+            font-size: clamp(16px, 4.2vw, 21px);
+            color: rgba(255,255,255,0.85);
+            line-height: 1.55;
+            margin-bottom: 1.5rem;            /* subtítulo → bullets */
             max-width: 480px;
+            padding: 0 0.25rem;
         }
 
+        /* ── Benefits list ──────────────────────────── */
         .benefits-list {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: -5px;
-            font-size: clamp(15px, 4vw, 18px);
+            gap: 1rem;                        /* espaço entre bullets */
+            margin-bottom: 1.75rem;           /* bullets → CTA */
+            font-size: clamp(15px, 3.8vw, 18px);
             color: #fff;
             align-items: center;
         }
@@ -279,71 +279,42 @@
             stroke-width: 3px;
         }
 
+        /* ── CTA Button ─────────────────────────────── */
         .cta-button {
             display: inline-block;
             background: linear-gradient(to right, #f59e0b, #ea580c);
             color: #fff;
             font-weight: 900;
-            font-size: clamp(22px, 6vw, 30px);
-            padding: 24px 38px; margin-bottom: 0;
+            font-size: clamp(20px, 5.5vw, 28px);
+            padding: 22px 36px;
             border-radius: 9999px;
             text-decoration: none;
-            box-shadow: 0 15px 35px rgba(234, 88, 12, 0.4);
+            box-shadow: 0 15px 35px rgba(234,88,12,0.4);
             transition: all 0.3s ease;
-            margin-top: 1rem; width: 100%;
+            margin-top: 0;
+            width: 100%;
             max-width: 400px;
             letter-spacing: 0.5px;
         }
-        
 
-        .microcopy {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        /* Desktop Adjustments to prevent ridiculous sizes */
+        /* ── Desktop adjustments ────────────────────── */
         @media (min-width: 768px) {
-            .hero-container {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: 0.25rem; /* Reduced from 2rem */
+            .hero-container { padding-top: 2rem; }
+            .benefits-list  { flex-direction: row; gap: 2rem; }
+            .mockup-wrapper { width: 55%; max-width: 320px; margin-bottom: 2.5rem; }
         }
-            .benefits-list { flex-direction: row; gap: 2rem; }
-        }
-        @media (max-height: 750px) {
-            .hero-container {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: 0.25rem; /* Reduced from 2rem */
-        }
-            .headline { margin-bottom: -5px; }
-            .mockup-wrapper { width: 70%; margin-bottom: -5px; }
-            .sub-headline { margin-bottom: 0; font-size: 15px; }
-            .benefits-list { margin-bottom: 0; gap: 0.5rem; }
-            .cta-button { padding: 18px 30px; margin-top: 1rem; margin-bottom: 0; font-size: 20px; }
+
+        /* ── Compact (very small screens / short) ───── */
+        @media (max-height: 720px) {
+            .headline       { margin-bottom: 1.25rem; font-size: clamp(28px, 7vw, 48px); }
+            .mockup-wrapper { width: 58%; margin-bottom: 1.25rem; }
+            .sub-headline   { margin-bottom: 1rem; font-size: 15px; }
+            .benefits-list  { gap: 0.6rem; margin-bottom: 1.25rem; }
+            .cta-button     { padding: 17px 28px; font-size: 19px; }
         }
     
-        
 </style>
+
 
     <div class="hero-container">
         <!-- BADGE superior -->
@@ -410,7 +381,7 @@
         
     </div>
 </section>
-<section class="relative py-20 px-4 overflow-hidden">
+<section class="relative py-14 md:py-16 px-4 overflow-hidden">
 
 
 
@@ -800,7 +771,7 @@
 
 
 
-		<section id="amostras-section" class="relative py-16 px-4 overflow-hidden">
+		<section id="amostras-section" class="relative py-14 md:py-16 px-4 overflow-hidden">
 
 			<style>
 
@@ -915,7 +886,7 @@
 
 			<div class="relative z-10 max-w-4xl mx-auto">
 
-				<div class="text-center mb-10">
+				<div class="text-center mb-8 md:mb-10">
 
 					<h2 class="text-2xl md:text-3xl lg:text-4xl font-black mb-3">Veja o tipo de som que você vai <span class="text-amber-400">conseguir tocar</span></h2>
 
@@ -931,7 +902,7 @@
 
 				<!-- Begin Carousel -->
 
-				<div class="relative mx-auto mb-10 w-[92vw] max-w-[330px]" id="audio-carousel-container">
+				<div class="relative mx-auto mb-8 md:mb-10 w-[92vw] max-w-[330px]" id="audio-carousel-container">
 
 
 
@@ -1938,7 +1909,7 @@
             </div>
         </section>
 
-        <section id="o-que-vai-aprender" class="py-16 px-4 relative overflow-hidden" style="background: linear-gradient(180deg, #0d0705 0%, #130c09 50%, #0d0705 100%);">
+        <section id="o-que-vai-aprender" class="py-14 md:py-16 px-4 relative overflow-hidden" style="background: linear-gradient(180deg, #0d0705 0%, #130c09 50%, #0d0705 100%);">
     <!-- Glow ambiental -->
     <div style="position:absolute;top:-60px;right:-60px;width:360px;height:360px;background:radial-gradient(circle,rgba(180,83,9,0.12) 0%,transparent 70%);pointer-events:none;"></div>
     <div style="position:absolute;bottom:-60px;left:-60px;width:360px;height:360px;background:radial-gradient(circle,rgba(120,53,15,0.10) 0%,transparent 70%);pointer-events:none;"></div>
@@ -1946,7 +1917,7 @@
     <div class="relative z-10 max-w-4xl mx-auto">
 
         <!-- Título da seção -->
-        <div class="text-center mb-10 md:mb-14">
+        <div class="text-center mb-8 md:mb-10 md:mb-14">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-white">O que você vai <span class="text-amber-500">aprender na prática</span></h2>
             <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">Mesmo começando do zero, você vai aprender passo a passo como tocar viola de forma simples e prática.</p>
         </div>
@@ -2057,7 +2028,7 @@
 
 
 		
-		<section class="relative py-16 px-4 overflow-hidden" style="background:linear-gradient(180deg,#0d0705 0%,#160d09 60%,#0d0705 100%);">
+		<section class="relative py-14 md:py-16 px-4 overflow-hidden" style="background:linear-gradient(180deg,#0d0705 0%,#160d09 60%,#0d0705 100%);">
     <!-- Glow ambiental -->
     <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(180,83,9,0.10) 0%,transparent 70%);pointer-events:none;"></div>
     <div class="relative z-10 max-w-4xl mx-auto text-center">
@@ -2138,7 +2109,7 @@
     </div>
 </section>
 
-		<section class="py-16 px-4 bg-[#1a0f0a]">
+		<section class="py-14 md:py-16 px-4 bg-[#1a0f0a]">
 
 
 
@@ -2146,7 +2117,7 @@
 
 				<h2 class="text-3xl md:text-4xl font-black text-center mb-4 text-white">Como você vai <span class="text-amber-500">receber seu acesso:</span></h2>
 
-				<p class="text-gray-300 text-center mb-6 md:mb-10 text-lg">Rápido, simples e direto ao ponto</p>
+				<p class="text-gray-300 text-center mb-6 md:mb-8 md:mb-10 text-lg">Rápido, simples e direto ao ponto</p>
 
 
 
@@ -2246,7 +2217,7 @@
 
 
 
-		<section class="py-16 px-4 bg-[#0d0705]">
+		<section class="py-14 md:py-16 px-4 bg-[#0d0705]">
 
 
 
@@ -2596,47 +2567,79 @@
 
 
 
-		<section id="ofertas" class="py-16 px-4 bg-[#0d0705]">
+		<section id="ofertas" class="py-14 md:py-16 px-4 bg-[#0d0705]">
 
 
 
 			<div class="max-w-lg mx-auto lg:mx-0">
 
-
-
-				<div style="text-align: center; margin-bottom: 25px;">
-
-					<h4
-
-						style="color: #FFA500; font-weight: bold; font-size: 18px; text-transform: uppercase; margin-bottom: 5px; margin-top: 0;">
-
-						🎁 E AINDA TEM MAIS...</h4>
-
-					<h2 style="color: #FFFFFF; font-weight: bold; font-size: 26px; margin: 0;">Você não vai<br/>aprender sozinho.</h2>
-
+			<!-- HEADER DO BLOCO DE BÔNUS -->
+			<div style="text-align:center; margin-bottom:24px;">
+				<div style="display:inline-block; background:linear-gradient(90deg,rgba(180,83,9,0.20),rgba(245,158,11,0.14)); border:1px solid rgba(245,158,11,0.30); border-radius:9999px; padding:5px 16px; margin-bottom:14px;">
+					<span style="color:#f59e0b; font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;">Incluído na sua compra</span>
 				</div>
+				<h2 style="color:#ffffff; font-weight:900; font-size:clamp(22px,5.5vw,32px); margin:0 0 12px; line-height:1.25;">
+					🎁 BÔNUS EXCLUSIVOS PRA ACELERAR<br/>SEU APRENDIZADO
+				</h2>
+				<p style="color:#c0c0c0; font-size:15px; line-height:1.65; margin:0; max-width:380px; display:block; margin-left:auto; margin-right:auto;">
+					Além do método completo, você recebe materiais extras que vão fazer você evoluir muito mais rápido na viola caipira
+				</p>
+			</div>
+
+			<!-- MOCKUP — não alterar -->
+			<div style="text-align:center; margin:0 auto 18px;">
+				<img src="bonuses-viola.png" alt="Materiais bônus Viola Caipira"
+					style="width:100%; max-width:380px; height:auto; display:block; margin:0 auto; border-radius:10px; filter:drop-shadow(0 20px 40px rgba(0,0,0,0.60)) drop-shadow(0 4px 12px rgba(180,83,9,0.30));" />
+			</div>
+
+			<!-- BADGE PÓS-IMAGEM -->
+			<div style="text-align:center; margin-bottom:22px;">
+				<span style="display:inline-block; background:rgba(30,17,8,0.90); border:1px solid rgba(245,158,11,0.25); border-radius:9999px; padding:6px 18px; color:#e5e7eb; font-size:13px; font-weight:600;">
+					📚 Pacote completo de apoio para quem quer sair do zero
+				</span>
+			</div>
+
+			<!-- LISTA PERSUASIVA -->
+			<div style="max-width:400px; margin:0 auto 24px;">
+				<ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:14px;">
+					<li style="display:flex;align-items:flex-start;gap:12px;color:#f0f0f0;font-size:15px;font-weight:600;line-height:1.55;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>
+						<span>Domine os <strong style="color:#fbbf24;">acordes essenciais</strong> da viola caipira</span>
+					</li>
+					<li style="display:flex;align-items:flex-start;gap:12px;color:#f0f0f0;font-size:15px;font-weight:600;line-height:1.55;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>
+						<span>Toque <strong style="color:#fbbf24;">modões reais</strong> com cifras e tablaturas simplificadas</span>
+					</li>
+					<li style="display:flex;align-items:flex-start;gap:12px;color:#f0f0f0;font-size:15px;font-weight:600;line-height:1.55;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>
+						<span>Tenha um <strong style="color:#fbbf24;">repertório completo</strong> para tocar em qualquer situação</span>
+					</li>
+					<li style="display:flex;align-items:flex-start;gap:12px;color:#f0f0f0;font-size:15px;font-weight:600;line-height:1.55;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>
+						<span>Aprenda <strong style="color:#fbbf24;">músicas gospel</strong> adaptadas para viola</span>
+					</li>
+					<li style="display:flex;align-items:flex-start;gap:12px;color:#f0f0f0;font-size:15px;font-weight:600;line-height:1.55;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20 6 9 17l-5-5"/></svg>
+						<span>Tudo <strong style="color:#fbbf24;">organizado passo a passo</strong> para facilitar seu aprendizado</span>
+					</li>
+				</ul>
+			</div>
+
+			<!-- FRASE DUPLA DE FECHAMENTO -->
+			<div style="text-align:center; padding:18px 20px; background:linear-gradient(135deg,rgba(30,17,8,0.95),rgba(39,22,9,0.95)); border-radius:12px; border:1px solid rgba(245,158,11,0.22); max-width:400px; margin:0 auto 36px; box-shadow:0 8px 30px rgba(0,0,0,0.35);">
+				<p style="color:#fbbf24; font-weight:900; font-size:15px; margin:0 0 8px; line-height:1.5;">
+					🔥 Tudo isso incluso pra você sair do zero e começar a tocar de verdade
+				</p>
+				<p style="color:#9ca3af; font-size:13px; font-weight:500; margin:0; line-height:1.5;">
+					Esses materiais poderiam ser vendidos separadamente, mas você recebe tudo incluso
+				</p>
+			</div>
 
 
 
-				<div
-
-					style="max-width: 450px; margin: 0 auto 40px auto; background-color: rgba(28, 17, 10, 0.8); border: 2px solid #FFA500; border-radius: 12px; padding: 25px; box-shadow: 0 0 25px rgba(255, 165, 0, 0.15); text-align: center;">
-
-					<img src="comunidade-vip.jpeg" alt="Grupo VIP Exclusivo"
-
-						style="margin-top: 1rem; width: 100%; max-width: 320px; height: auto; border-radius: 8px; margin: 0 auto 20px auto; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
-
-					<h3 style="font-size: 22px; font-weight: bold; color: #FFFFFF; margin-bottom: 12px; margin-top: 0;">
-
-						🎯 Acesso ao Grupo Exclusivo de Alunos</h3>
-
-					<p style="font-size: 15px; color: #D1D5DB; line-height: 1.65; margin: 0;">Entre para um grupo com outros iniciantes que também estão aprendendo viola do zero.<br/><br/>Tire dúvidas, compartilhe sua evolução e acompanhe outras pessoas que estão no mesmo processo que você.<br/><br/>Um ambiente para evoluir mais rápido e não desistir no meio do caminho.</p>
-
-				</div>
 
 
-
-				<div class="text-center mb-10">
+				<div class="text-center mb-8 md:mb-10">
 
 					<h2 class="text-2xl md:text-3xl lg:text-4xl font-black mb-3">Escolha sua <span
 
@@ -3124,11 +3127,11 @@
 
 
 
-		<section class="py-12 px-4 bg-[#0d0705]">
+		<section class="py-10 md:py-12 px-4 bg-[#0d0705]">
 
 			<div
 
-				style="border: 2px solid #00C853; background: #000000; padding: 40px; border-radius: 12px; text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 600px; margin: 0 auto;">
+				style="border: 2px solid #00C853; background: #000000; padding: 24px md:padding:32px; border-radius: 12px; text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 600px; margin: 0 auto;">
 
 
 
@@ -3136,18 +3139,14 @@
 
 
 
-				<h2 style="color: #ffffff; font-size: 28px; font-weight: bold; margin-bottom: 24px;">Garantia
-
-					incondicional de 7 dias</h2>
+				<h2 style="color: #ffffff; font-size: 28px; font-weight: bold; margin-bottom: 24px;">Garantia incondicional de 7 dias</h2>
 
 
 
-				<p style="color: #e5e7eb; font-size: 16px; line-height: 1.6; margin-bottom: 32px;">
-
-					Você tem 7 dias para baixar e testar as músicas no seu pen drive, carro ou caminhão. Se não curtir a
-
-					qualidade ou o repertório, devolvemos 100% do seu dinheiro. Sem perguntas e sem letras miúdas.
-
+				<p style="color: #e5e7eb; font-size: 16px; line-height: 1.8; margin-bottom: 32px;">
+					Você tem 7 dias para acessar o método e testar tudo com calma.<br/><br/>
+					Se não gostar da forma de ensino ou não se adaptar ao método, devolvemos 100% do seu dinheiro.<br/><br/>
+					<strong style="color:#fff;">Sem perguntas e sem complicação.</strong>
 				</p>
 
 
@@ -3155,9 +3154,7 @@
 				<div style="border: 1px solid #00C853; padding: 20px; border-radius: 8px; width: 100%;">
 
 					<p style="color: #ffffff; font-weight: bold; margin: 0; font-size: 16px;">
-
-						Seu investimento está 100% protegido. Você não tem nada a perder e milhares de músicas a ganhar.
-
+						Seu investimento está 100% protegido. Você não tem nada a perder e pode começar a tocar do zero com total segurança.
 					</p>
 
 				</div>
@@ -3170,345 +3167,506 @@
 
 
 
-		<section class="py-16 px-4 bg-[#0d0705]">
-
-
-
-			<div class="max-w-lg mx-auto lg:mx-0">
-
-				<h2 class="text-2xl md:text-3xl font-black text-center mb-3">DÚVIDAS <span
-
-						class="text-amber-400">FREQUENTES</span></h2>
-
-
-
-				<div class="space-y-3">
-
-					<div class="bg-[#1a0f0a] rounded-xl border border-amber-900/20 overflow-hidden">
-
-						<button class="w-full flex items-center justify-between p-4 text-left faq-btn"><span
-
-								class="text-white font-semibold text-sm pr-4">Como eu recebo o acesso?</span>
-
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-
-								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
-								stroke-linejoin="round"
-
-								class="lucide lucide-chevron-down w-5 h-5 text-amber-400 transition-transform duration-300"
-
-								aria-hidden="true">
-
-								<path d="m6 9 6 6 6-6"></path>
-
-							</svg>
-
-						</button>
-
-						<div class="px-4 pb-4 hidden faq-content">
-
-							<p style="line-height: 1.6; color: #D1D5DB;" class="text-sm">Assim que o pagamento for
-
-								aprovado (Pix ou Cartão é liberado na hora), você recebe um e-mail com o link de acesso
-
-								imediato. É só clicar, baixar e começar a usar.</p>
-
-						</div>
-
-					</div>
-
-
-
-
-
-					<div class="bg-[#1a0f0a] rounded-xl border border-amber-900/20 overflow-hidden"><button
-
-							class="w-full flex items-center justify-between p-4 text-left faq-btn"><span
-
-								class="text-white font-semibold text-sm pr-4">Precisa de internet pra ouvir?</span>
-
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-
-								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
-								stroke-linejoin="round"
-
-								class="lucide lucide-chevron-down w-5 h-5 text-amber-400 transition-transform duration-300"
-
-								aria-hidden="true">
-
-								<path d="m6 9 6 6 6-6"></path>
-
-							</svg>
-
-						</button>
-
-						<div class="px-4 pb-4 hidden faq-content">
-
-							<p style="line-height: 1.6; color: #D1D5DB;" class="text-sm">Não! Essa é a maior vantagem.
-
-								Após baixar os arquivos para o seu pen drive ou celular, você escuta tudo 100% offline,
-
-								sem gastar a sua franquia de dados e sem depender de sinal de internet na estrada ou na
-
-								roça.</p>
-
-						</div>
-
-					</div>
-
-
-
-
-
-					<div class="bg-[#1a0f0a] rounded-xl border border-amber-900/20 overflow-hidden"><button
-
-							class="w-full flex items-center justify-between p-4 text-left faq-btn"><span
-
-								class="text-white font-semibold text-sm pr-4">Serve em qualquer carro?</span>
-
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-
-								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
-								stroke-linejoin="round"
-
-								class="lucide lucide-chevron-down w-5 h-5 text-amber-400 transition-transform duration-300"
-
-								aria-hidden="true">
-
-								<path d="m6 9 6 6 6-6"></path>
-
-							</svg>
-
-						</button>
-
-						<div class="px-4 pb-4 hidden faq-content">
-
-							<p style="line-height: 1.6; color: #D1D5DB;" class="text-sm">Sim. Os arquivos estão em
-
-								formato universal (MP3 e MP4). Qualquer rádio de carro, caminhão ou trator que tenha
-
-								entrada USB (pen drive) vai rodar perfeitamente, com alta qualidade de áudio e sem
-
-								travar.</p>
-
-						</div>
-
-					</div>
-
-
-
-
-
-					<div class="bg-[#1a0f0a] rounded-xl border border-amber-900/20 overflow-hidden"><button
-
-							class="w-full flex items-center justify-between p-4 text-left faq-btn"><span
-
-								class="text-white font-semibold text-sm pr-4">Como coloco no pendrive?</span>
-
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-
-								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
-								stroke-linejoin="round"
-
-								class="lucide lucide-chevron-down w-5 h-5 text-amber-400 transition-transform duration-300"
-
-								aria-hidden="true">
-
-								<path d="m6 9 6 6 6-6"></path>
-
-							</svg>
-
-						</button>
-
-						<div class="px-4 pb-4 hidden faq-content">
-
-							<p style="line-height: 1.6; color: #D1D5DB;" class="text-sm">É muito simples. Você vai
-
-								baixar o acervo no seu computador ou celular e depois apenas copiar e colar (ou
-
-								arrastar) para dentro do seu pen drive. Os arquivos já vão totalmente organizados em
-
-								pastas para facilitar a sua vida.</p>
-
-						</div>
-
-					</div>
-
-
-
-
-
-					<div class="bg-[#1a0f0a] rounded-xl border border-amber-900/20 overflow-hidden"><button
-
-							class="w-full flex items-center justify-between p-4 text-left faq-btn"><span
-
-								class="text-white font-semibold text-sm pr-4">Tem música velha e nova?</span>
-
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-
-								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
-								stroke-linejoin="round"
-
-								class="lucide lucide-chevron-down w-5 h-5 text-amber-400 transition-transform duration-300"
-
-								aria-hidden="true">
-
-								<path d="m6 9 6 6 6-6"></path>
-
-							</svg>
-
-						</button>
-
-						<div class="px-4 pb-4 hidden faq-content">
-
-							<p style="line-height: 1.6; color: #D1D5DB;" class="text-sm">Com certeza! O acervo é
-
-								completo. Tem desde os grandes clássicos do modão raiz, sucessos dos anos 80 e 90, até
-
-								os hits mais estourados do sertanejo universitário e da sofrência atual. Tem música para
-
-								todos os gostos.</p>
-
-						</div>
-
-					</div>
-
-
-
-
-
-					<div class="bg-[#1a0f0a] rounded-xl border border-amber-900/20 overflow-hidden"><button
-
-							class="w-full flex items-center justify-between p-4 text-left faq-btn"><span
-
-								class="text-white font-semibold text-sm pr-4">Dá pra ouvir na TV ou caixa de som?</span>
-
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-
-								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
-								stroke-linejoin="round"
-
-								class="lucide lucide-chevron-down w-5 h-5 text-amber-400 transition-transform duration-300"
-
-								aria-hidden="true">
-
-								<path d="m6 9 6 6 6-6"></path>
-
-							</svg>
-
-						</button>
-
-						<div class="px-4 pb-4 hidden faq-content">
-
-							<p style="line-height: 1.6; color: #D1D5DB;" class="text-sm">Sim! Basta conectar o seu pen
-
-								drive na entrada USB da sua Smart TV, caixa de som JBL, paredão, rádio portátil ou
-
-								computador. É plugar e dar o play.</p>
-
-						</div>
-
-					</div>
-
-
-
-
-
-					<div class="bg-[#1a0f0a] rounded-xl border border-amber-900/20 overflow-hidden"><button
-
-							class="w-full flex items-center justify-between p-4 text-left faq-btn"><span
-
-								class="text-white font-semibold text-sm pr-4">É mensalidade?</span>
-
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-
-								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
-								stroke-linejoin="round"
-
-								class="lucide lucide-chevron-down w-5 h-5 text-amber-400 transition-transform duration-300"
-
-								aria-hidden="true">
-
-								<path d="m6 9 6 6 6-6"></path>
-
-							</svg>
-
-						</button>
-
-						<div class="px-4 pb-4 hidden faq-content">
-
-							<p style="line-height: 1.6; color: #D1D5DB;" class="text-sm">De jeito nenhum! O pagamento é
-
-								ÚNICO. Você paga apenas uma vez o valor da oferta escolhida (R$ 9,90 ou R$ 19,90) e o
-
-								material é seu. Não tem taxa escondida e nem cobrança mensal no seu cartão.</p>
-
-						</div>
-
-					</div>
-
-
-
-
-
-					<div class="bg-[#1a0f0a] rounded-xl border border-amber-900/20 overflow-hidden"><button
-
-							class="w-full flex items-center justify-between p-4 text-left faq-btn"><span
-
-								class="text-white font-semibold text-sm pr-4">E se eu tiver dúvidas?</span>
-
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-
-								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
-								stroke-linejoin="round"
-
-								class="lucide lucide-chevron-down w-5 h-5 text-amber-400 transition-transform duration-300"
-
-								aria-hidden="true">
-
-								<path d="m6 9 6 6 6-6"></path>
-
-							</svg>
-
-						</button>
-
-						<div class="px-4 pb-4 hidden faq-content">
-
-							<p style="line-height: 1.6; color: #D1D5DB;" class="text-sm">Fique tranquilo. Quem escolhe o
-
-								Acesso Premium tem suporte humanizado no WhatsApp. Se você tiver qualquer dificuldade
-
-								para baixar ou passar para o pen drive, nossa equipe pega na sua mão e ajuda passo a
-
-								passo.</p>
-
-						</div>
-
-					</div>
-
-
-
-
-
-				</div>
-
-
-
-			</div>
-
-
-
-
-
-		</section>
+		<section id="faq" style="
+    padding: 56px 16px;
+    background: linear-gradient(180deg,#0d0705 0%,#130c09 100%);
+    position: relative;
+    overflow: hidden;
+">
+    <!-- Ambient glow -->
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:200px;background:radial-gradient(ellipse,rgba(180,83,9,0.09) 0%,transparent 70%);pointer-events:none;"></div>
+
+    <div style="position:relative;z-index:10;max-width:680px;margin:0 auto;width:100%;box-sizing:border-box;">
+
+        <!-- Heading -->
+        <div style="text-align:center;margin-bottom:36px;">
+            <h2 style="color:#ffffff;font-size:clamp(22px,5.5vw,32px);font-weight:900;margin:0 0 8px;">
+                DÚVIDAS <span style="color:#f59e0b;">FREQUENTES</span>
+            </h2>
+            <p style="color:#6b7280;font-size:14px;margin:0;">Respostas rápidas para as perguntas mais comuns</p>
+        </div>
+
+        <!-- FAQ Items -->
+        <div style="width:100%;box-sizing:border-box;">
+
+                <div class="faq-item" id="faq-0" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(0)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">Eu nunca toquei nada, vou conseguir aprender?</span>
+                        <svg id="arrow-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-0" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Sim. O método foi feito para iniciantes absolutos. Você começa do zero e evolui passo a passo, sem dificuldade.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-1" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(1)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">Preciso já ter uma viola?</span>
+                        <svg id="arrow-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-1" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Sim, você precisa de uma viola caipira para praticar. Qualquer modelo básico já é suficiente para começar.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-2" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(2)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">Em quanto tempo vou conseguir tocar alguma coisa?</span>
+                        <svg id="arrow-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-2" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Seguindo o método corretamente, você já consegue tocar suas primeiras músicas simples em poucos dias.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-3" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(3)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">As aulas são difíceis?</span>
+                        <svg id="arrow-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-3" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Não. O método é direto e prático, sem teoria complicada. Tudo é explicado de forma simples.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-4" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(4)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">Eu preciso saber ler partitura?</span>
+                        <svg id="arrow-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-4" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Não. Você não precisa de partitura. O método ensina de forma prática, fácil de entender.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-5" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(5)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">O acesso é vitalício?</span>
+                        <svg id="arrow-5" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-5" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Sim. Você paga uma única vez e pode acessar o conteúdo quando quiser.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-6" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(6)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">Posso assistir pelo celular?</span>
+                        <svg id="arrow-6" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-6" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Sim. Você pode acessar pelo celular, computador ou tablet, onde quiser.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-7" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(7)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">Vou aprender músicas de verdade?</span>
+                        <svg id="arrow-7" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-7" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Sim. Você aprende com exemplos reais, incluindo modões e estilos populares.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-8" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(8)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">Tem suporte se eu tiver dúvidas?</span>
+                        <svg id="arrow-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-8" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Sim. Você terá suporte para te ajudar durante o aprendizado.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-9" style="
+                    width: 100%;
+                    box-sizing: border-box;
+                    background: #1c110a;
+                    border: 1px solid rgba(180,110,30,0.25);
+                    border-radius: 14px;
+                    overflow: hidden;
+                    margin-bottom: 12px;
+                ">
+                    <button onclick="toggleFaq(9)" style="
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        padding: 16px 20px;
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-align: left;
+                        box-sizing: border-box;
+                    ">
+                        <span style="
+                            color: #ffffff;
+                            font-size: 15px;
+                            font-weight: 600;
+                            line-height: 1.5;
+                            flex: 1;
+                        ">E se eu não gostar?</span>
+                        <svg id="arrow-9" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform 0.3s ease;"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="panel-9" style="
+                        display: none;
+                        padding: 0 20px 18px;
+                        box-sizing: border-box;
+                    ">
+                        <p style="
+                            color: #c9c9c9;
+                            font-size: 14px;
+                            line-height: 1.7;
+                            margin: 0;
+                        ">Você tem garantia de 7 dias. Se não gostar, pode pedir seu dinheiro de volta.</p>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Frase de reforço -->
+        <div style="text-align:center;margin-top:32px;">
+            <p style="color:#9ca3af;font-size:14px;line-height:1.7;margin:0;">
+                Ainda com dúvida? Você pode testar sem risco.<br/>
+                <strong style="color:#ffffff;">Sua compra está 100% protegida.</strong>
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleFaq(idx) {
+            var panel = document.getElementById('panel-' + idx);
+            var arrow = document.getElementById('arrow-' + idx);
+            var item  = document.getElementById('faq-' + idx);
+            var open  = panel.style.display !== 'none';
+
+            // close all
+            for (var i = 0; i < 10; i++) {
+                var p = document.getElementById('panel-' + i);
+                var a = document.getElementById('arrow-' + i);
+                var it = document.getElementById('faq-' + i);
+                if (p) p.style.display = 'none';
+                if (a) a.style.transform = 'rotate(0deg)';
+                if (it) it.style.border = '1px solid rgba(180,110,30,0.25)';
+            }
+
+            if (!open) {
+                panel.style.display = 'block';
+                arrow.style.transform = 'rotate(180deg)';
+                item.style.border = '1px solid rgba(245,158,11,0.55)';
+                item.style.boxShadow = '0 0 20px rgba(180,83,9,0.12)';
+            }
+        }
+    </script>
+</section>
 
 
 
